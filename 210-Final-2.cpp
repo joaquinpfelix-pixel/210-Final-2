@@ -6,6 +6,7 @@
 #include <ctime>
 #include <deque>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -77,6 +78,8 @@ int main()
 
     vector<string> bracelet_line;
 
+    queue<string> pretzel_line;
+
     for (int i = 0; i < 3; i++)
     {
         Node* new_node = new Node;
@@ -125,6 +128,16 @@ int main()
         bracelet_line.push_back(
             customer + " bought a " +
             bracelet + " bracelet"
+        );
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        string customer = 
+            names[rand() % NAME_COUNT];
+
+        pretzel_line.push(
+            customer + " bought a pretzel"
         );
     }
 
@@ -254,6 +267,38 @@ int main()
 
             cout << customer
                  << " joined bracelet line."
+                 << endl;
+        }
+
+        cout << endl;
+
+        cout << "Pretzel Booth:"
+             << endl;
+        
+        if (!pretzel_line.empty())
+        {
+            cout << pretzel_line.front()
+                 << endl;
+
+            pretzel_line.pop();
+        }
+        else
+        {
+            cout << "No pretzel customer."
+                 << endl;
+        }
+
+        if (rand() % 2 == 0)
+        {
+            string customer = 
+                names[rand() % NAME_COUNT];
+            
+            pretzel_line.push(
+                customer + " bought a pretzel"
+            );
+
+            cout << customer
+                 << " joined pretzel line."
                  << endl;
         }
 
