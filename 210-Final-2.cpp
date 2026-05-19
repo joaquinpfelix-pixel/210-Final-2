@@ -220,6 +220,44 @@ int main()
         }
 
         cout << endl;
+
+        cout << "Bracelet Booth:"
+             << endl;
+
+        if (!bracelet_line.empty())
+        {
+            cout << bracelet_line.front()
+                 << endl;
+            
+            bracelet_line.erase(
+                bracelet_line.begin()
+            );
+        }
+        else
+        {
+            cout << "No bracelet customer."
+                 << endl;
+        }
+
+        if (rand() % 2 == 0)
+        {
+            string customer =
+                names[rand() % NAME_COUNT];
+            
+            string bracelet =
+                bracelets[rand() % 5];
+
+            bracelet_line.push_back(
+                customer + " bought a " +
+                bracelet + " bracelet"
+            );
+
+            cout << customer
+                 << " joined bracelet line."
+                 << endl;
+        }
+
+        cout << endl;
     }
 
     return 0;
