@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <deque>
 
 using namespace std;
 
@@ -46,6 +47,15 @@ string drinks[DRINK_COUNT] = {
     "Iced Coffee"
 };
 
+// Generated using an llm
+string muffins[5] = {
+    "Blueberry",
+    "Chocolate Chip",
+    "Banana Nut",
+    "Pumpkin",
+    "Cinnamon"
+};
+
 int main()
 {
     srand(time(0));
@@ -53,7 +63,9 @@ int main()
     Node* head = nullptr;
     Node* tail = nullptr;
 
-    for (int i = 0; i < 3; ++i)
+    deque<string> muffin_queue;
+
+    for (int i = 0; i < 3; i++)
     {
         Node* new_node = new Node;
 
@@ -75,6 +87,19 @@ int main()
             tail->next = new_node;
             tail = new_node;
         }
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        string customer =
+            names[rand() % NAME_COUNT];
+        
+        string muffin =
+            muffins[rand() % 5];
+        
+        muffin_queue.push_back(
+            customer + " ordered " + muffin
+        );
     }
 
     for (int round = 1; round <= ROUNDS; ++round)
@@ -134,6 +159,8 @@ int main()
         }
 
         cout << endl;
+
+        if (!muffin_queue)
     }
 
     return 0;
