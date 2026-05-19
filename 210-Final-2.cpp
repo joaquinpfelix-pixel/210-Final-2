@@ -77,7 +77,7 @@ int main()
         }
     }
 
-    for (int round = 1; round <=ROUNDS; ++round)
+    for (int round = 1; round <= ROUNDS; ++round)
     {
         cout << "Round " 
              << round
@@ -101,7 +101,7 @@ int main()
         }
         else
         {
-            cout << "No custmomer to serve."
+            cout << "No customer to serve."
                  << endl;
         }
 
