@@ -160,7 +160,40 @@ int main()
 
         cout << endl;
 
-        if (!muffin_queue)
+        cout << "Muffin Booth:"
+             << endl;
+
+        if (!muffin_queue.empty())
+        {
+            cout << muffin_queue.front()
+                 << endl;
+
+            muffin_queue.pop_front();
+        }
+        else
+        {
+            cout << "No muffin customer."
+                 << endl;
+        }
+
+        if (rand() % 2 == 0)
+        {
+            string customer =
+                names[rand() % NAME_COUNT];
+            
+            string muffin = 
+                muffins[rand() % 5];
+
+            muffin_queue.push_back(
+                customer + " ordered " + muffin
+            );
+
+            cout << customer
+                 << " joined muffin line."
+                 << endl;
+        }
+
+        cout << endl;
     }
 
     return 0;
