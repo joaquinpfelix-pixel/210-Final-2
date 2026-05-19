@@ -147,6 +147,9 @@ int main()
              << round
              << endl;
         
+        cout << "Coffee Booth"
+             << endl;
+
         if (head != nullptr)
         {
             cout << head->customer_name
@@ -303,6 +306,13 @@ int main()
         }
 
         cout << endl;
+    }
+
+    while (head != nullptr)
+    {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
     }
 
     return 0;
