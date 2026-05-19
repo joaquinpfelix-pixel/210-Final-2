@@ -59,7 +59,7 @@ int main()
         new_node->customer_name =
             names[rand() % NAME_COUNT];
         new_node->drink_order =
-            names[rand() % DRINK_COUNT];
+            drinks[rand() % DRINK_COUNT];
         
         new_node->next = nullptr;
 
@@ -78,4 +78,16 @@ int main()
     cout << "Coffee Booth Queue:" << endl;
     
     Node* current = head;
+
+    while (current != nullptr)
+    {
+        cout << current->customer_name
+             << " ordered "
+             << current->drink_order
+             << endl;
+        
+        current = current->next;
+    }
+
+    return 0;
 }
