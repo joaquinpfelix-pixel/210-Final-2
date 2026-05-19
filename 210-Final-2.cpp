@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <deque>
+#include <vector>
 
 using namespace std;
 
@@ -19,7 +20,7 @@ const int NAME_COUNT = 10;
 const int DRINK_COUNT = 10;
 const int ROUNDS = 10;
 
-// Generated using an llm
+// Generated using a llm
 string names[NAME_COUNT] = {
     "Alex",
     "Jordan",
@@ -33,7 +34,7 @@ string names[NAME_COUNT] = {
     "Parker"
 };
 
-// Generated using an llm
+// Generated using a llm
 string drinks[DRINK_COUNT] = {
     "Latte",
     "Mocha",
@@ -47,13 +48,22 @@ string drinks[DRINK_COUNT] = {
     "Iced Coffee"
 };
 
-// Generated using an llm
+// Generated using a llm
 string muffins[5] = {
     "Blueberry",
     "Chocolate Chip",
     "Banana Nut",
     "Pumpkin",
     "Cinnamon"
+};
+
+// Generated using a llm
+string bracelets[5] = {
+    "Rainbow",
+    "Heart",
+    "Star",
+    "Flower",
+    "Beaded"
 };
 
 int main()
@@ -64,6 +74,8 @@ int main()
     Node* tail = nullptr;
 
     deque<string> muffin_queue;
+
+    vector<string> bracelet_line;
 
     for (int i = 0; i < 3; i++)
     {
@@ -99,6 +111,20 @@ int main()
         
         muffin_queue.push_back(
             customer + " ordered " + muffin
+        );
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        string customer =
+            names[rand() % NAME_COUNT];
+
+        string bracelet = 
+            bracelets[rand() % 5];
+        
+        bracelet_line.push_back(
+            customer + " bought a " +
+            bracelet + " bracelet"
         );
     }
 
